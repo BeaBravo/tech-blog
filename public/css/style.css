@@ -1,0 +1,132 @@
+/* Root styles including color pallets are here */
+:root {
+  --background-color: #9a275a;
+  --text-color: #e2c6c2;
+  --border-color: #cb958e;
+  --selection-color: #e2bfba;
+}
+
+::selection {
+  background-color: var(--selection-color);
+  color: var(--background-color);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  background: var(--text-color);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 1.75rem;
+  line-height: 1.5;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  /* padding: 0.5rem; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.625rem;
+  margin-left: 0.5rem;
+  color: var(--text-color);
+  font-weight: 250;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 0.25rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 2.5rem;
+}
+
+h5 {
+  font-size: 2rem;
+}
+
+h6 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-weight: lighter;
+}
+
+/* Header Styles */
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1%;
+  align-items: center;
+  color: var(--text-color);
+  background: var(--background-color);
+}
+
+header nav {
+  display: flex;
+  min-width: 300px;
+  width: auto;
+  justify-content: space-evenly;
+}
+
+header nav a {
+  text-decoration: none;
+  font-weight: bolder;
+  color: var(--text-color);
+}
+
+/* Font color changes when user hovers over any of the nav elements */
+header nav a:hover {
+  color: #806666;
+}
+
+main {
+  background: var(--text-color);
+  color: var(--background-color);
+}
+
+.blog-posts {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  margin: 1.5em;
+  border: #9a275a solid 3px;
+}
+
+.card-header {
+  background: var(--background-color);
+  display: flex;
+  color: var(--text-color);
+  justify-content: space-between;
+}
+
+.card-content {
+  padding: 0.5em;
+}
