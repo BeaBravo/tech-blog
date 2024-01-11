@@ -37,7 +37,24 @@ router.post("/login", async (req, res) => {
     const userData = await User.findOne({
       where: { username: req.body.username },
     });
-    console.log(userData);
+    //check if the user exists
+    if (!userData) {
+      res
+        .status(400)
+        .json({ message: "Incorrect email or password. Please try again" });
+      return;
+    }
+
+    //check password
+    const validPassword = await userData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      res
+        .status(400)
+        .json({ message: "Incorrect email or password. Please try again!" });
+      return;
+    }
+
     //create a session
     req.session.save(() => {
       req.session.user_id = userData.id;
