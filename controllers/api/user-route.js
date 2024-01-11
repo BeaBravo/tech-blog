@@ -14,6 +14,23 @@ router.get("/", async (req, res) => {
   res.status(200).json(allUsers);
 });
 
+//POST - to create a new user
+router.post("/", async (req, res) => {
+  const newUser = await User.create({
+    username: req.body.username,
+    password: req.body.password,
+  });
+
+  //create a session for new user
+  req.session.save(() => {
+    req.session.logged_in = true;
+    req.session.user_id = newUser.id;
+    console.log("New user created: ", newUser);
+    res.status(200).json(newUser);
+  });
+});
+
+//POST - creates a new session with an existing user
 router.post("/login", async (req, res) => {
   try {
     //find the user with the username
@@ -33,7 +50,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
-//route for loging out
+//POST - route for loging out
 router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
     // Remove the session variables

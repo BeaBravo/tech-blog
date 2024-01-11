@@ -6,17 +6,12 @@ const withAuth = require("../utils/auth");
 router.get("/", async (req, res) => {
   try {
     const allPosts = await Post.findAll({
-      include: [
-        { model: User, as: "user" },
-        //   { model: Comment, as: "comments" },
-      ],
+      include: [{ model: User, as: "user" }],
     });
 
     const posts = allPosts.map((post) => {
-      // console.log(post.getDate);
       return post.get({ plain: true });
     });
-    //   console.log(posts);
     res.render("homepage", { posts, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
@@ -31,6 +26,16 @@ router.get("/login", (req, res) => {
     return;
   }
   res.render("login");
+});
+
+//login page
+router.get("/signup", (req, res) => {
+  //if a session exists, redirect to the homepage
+  if (req.session.logged_in) {
+    res.direct("/");
+    return;
+  }
+  res.render("signup");
 });
 
 module.exports = router;
