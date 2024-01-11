@@ -1,1 +1,15 @@
-<strong>show me all my posts</strong>
+<section class="blog-posts">
+  {{#each posts as |post|}}
+    <section class="card" id="post-{{post.id}}">
+      <section class="card-header">
+        <h3>{{post.post_title}}</h3>
+        <p></p>
+      </section>
+      <section class="card-content">
+        <p>
+          {{post.post_content}}
+        </p>
+      </section>
+    </section>
+  {{/each}}
+</section>

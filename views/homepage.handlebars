@@ -1,6 +1,6 @@
 <section class="blog-posts">
   {{#each posts as |post|}}
-    <section class="card">
+    <section class="card" id="post-{{post.id}}">
       <section class="card-header">
         <h3>{{post.post_title}}</h3>
         <p>posted by {{post.user.username}}</p>
