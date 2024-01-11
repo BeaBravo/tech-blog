@@ -1,7 +1,11 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Post extends Model {}
+class Post extends Model {
+  getDate() {
+    return this.getDataValue("createdAt").format("MM/DD/YYYY");
+  }
+}
 
 Post.init(
   {

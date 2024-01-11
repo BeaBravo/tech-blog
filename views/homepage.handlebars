@@ -1,0 +1,15 @@
+<section class="blog-posts">
+  {{#each posts as |post|}}
+    <section class="card">
+      <section class="card-header">
+        <h3>{{post.post_title}}</h3>
+        <p>posted by {{post.user.username}} on 3/12/2023</p>
+      </section>
+      <section class="card-content">
+        <p>
+          {{post.post_content}}
+        </p>
+      </section>
+    </section>
+  {{/each}}
+</section>
