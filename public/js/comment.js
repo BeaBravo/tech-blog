@@ -7,7 +7,8 @@ const addComment = (event) => {
     .querySelector("#comment-content")
     .value.trim();
   console.log(commentContent);
-  console.log(req.session.used_id);
+  console.log(window.location.href);
+  //   console.log(req.session.used_id);
 
   //send a post request to create a new comment with the creator_id = req.session.user_id
   // and the post id can be grabbed from the address
