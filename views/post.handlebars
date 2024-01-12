@@ -24,7 +24,21 @@
 
       </section>
     {{/each}}
-    <button class="btn comment-btn" id="comment-button">Add a comment</button>
+    <form class="form comment-form">
+      <div class="form-group new-comment">
+        <input
+          class="form-input"
+          type="text"
+          id="comment-content"
+          placeholder="add your comment here"
+        />
+
+        <button class="btn comment-btn" id="comment-button" type="submit">Add a
+          comment</button>
+      </div>
+    </form>
   </section>
 
 </section>
+
+<script src="/js/comment.js"></script>

@@ -159,7 +159,14 @@ main {
   display: flex;
   flex-direction: column;
   width: 40vh;
-  /* margin-left: 5em; */
+}
+
+.new-comment input {
+  margin-left: 1em;
+  margin-top: 1.5em;
+  width: 250px;
+  height: 50px;
+  text-wrap: wrap;
 }
 
 .comment-btn {
