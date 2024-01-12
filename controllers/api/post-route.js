@@ -14,4 +14,16 @@ router.get("/", async (req, res) => {
   res.status(200).json(allPosts);
 });
 
+// GET one post by id api/posts/:id
+router.get("/:id", async (req, res) => {
+  const post = await Post.findOne({
+    where: {
+      id: req.params.id,
+    },
+    include: [{ model: Comment }],
+  });
+  // console.log(post.get({ plain: true }));
+  res.status(200).json(post.get({ plain: true }));
+});
+
 module.exports = router;

@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-//login page
+//logout page
 router.get("/login", (req, res) => {
   //if a session exists, redirect to the homepage
   if (req.session.logged_in) {
@@ -28,7 +28,7 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-//login page
+//signup page
 router.get("/signup", (req, res) => {
   //if a session exists, redirect to the homepage
   if (req.session.logged_in) {

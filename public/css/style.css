@@ -153,3 +153,20 @@ main {
   padding: 0.25em;
   margin-bottom: 2em;
 }
+
+/* comment section styles */
+.comments {
+  display: flex;
+  flex-direction: column;
+  width: 40vh;
+  /* margin-left: 5em; */
+}
+
+.comment-btn {
+  width: 250px;
+  margin-left: 1em;
+  background: var(--background-color);
+  color: var(--text-color);
+  border: var(--background-color);
+  border-radius: 5px;
+}

@@ -1,7 +1,7 @@
 <section class="blog-posts">
   {{#each posts as |post|}}
     <section class="card" id="post-{{post.id}}">
-      <section class="card-header">
+      <section class="card-header" id="post-{{post.id}}">
         <h3>{{post.post_title}}</h3>
         <p>posted by {{post.user.username}}</p>
       </section>
@@ -13,3 +13,5 @@
     </section>
   {{/each}}
 </section>
+
+<script src="/js/onePost.js"></script>
