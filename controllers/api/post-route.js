@@ -27,4 +27,13 @@ router.get("/:id", withAuth, async (req, res) => {
   res.status(200).json(post.get({ plain: true }));
 });
 
+//POST - create a new post
+router.post("/", async (req, res) => {
+  const newPost = await Post.create({
+    ...req.body,
+    creator_id: req.session.user_id,
+  });
+  res.status(200).json(newPost);
+});
+
 module.exports = router;
