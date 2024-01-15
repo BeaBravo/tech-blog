@@ -12,9 +12,12 @@ const addComment = async (event) => {
 
   // send a post request to create a new comment with the creator_id = req.session.user_id
   // and the post id can be grabbed from the address
+  const currentURL = window.location.href;
+  const URLinArray = currentURL.split("/");
+  const post_id = URLinArray[URLinArray.length - 1];
   const response = await fetch("/api/comments/", {
     method: "POST",
-    body: JSON.stringify({ comment: commentContent, post_id: 1 }),
+    body: JSON.stringify({ comment: commentContent, post_id: post_id }),
     headers: { "Content-Type": "application/json" },
   });
 

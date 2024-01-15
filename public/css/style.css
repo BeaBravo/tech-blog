@@ -176,4 +176,21 @@ main {
   color: var(--text-color);
   border: var(--background-color);
   border-radius: 5px;
+  cursor: pointer;
+}
+
+/* dashboard page */
+/* add a new post button styles */
+.add-new-post {
+  margin-top: 5em;
+  display: flex;
+  justify-content: center;
+}
+
+#add-post-btn {
+  font-size: x-large;
+}
+
+#add-post-btn:hover {
+  cursor: pointer;
 }

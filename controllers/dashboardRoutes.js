@@ -12,8 +12,9 @@ router.get("/", withAuth, async (req, res) => {
   const posts = allPostsFromUser.map((post) => {
     return post.get({ plain: true });
   });
+  logged_in = req.session.logged_in;
   //   console.log(posts);
-  res.render("dashboard", { posts });
+  res.render("dashboard", { posts, logged_in });
 });
 
 module.exports = router;
