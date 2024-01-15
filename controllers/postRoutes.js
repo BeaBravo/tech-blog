@@ -17,8 +17,8 @@ router.get("/:id", withAuth, async (req, res) => {
     include: [{ model: User }],
   });
   const comments = allComments.map((comment) => comment.get({ plain: true }));
-  console.log(comments);
-  res.render("post", { post, comments });
+  logged_in = req.session.logged_in;
+  res.render("post", { post, comments, logged_in });
 });
 
 module.exports = router;
