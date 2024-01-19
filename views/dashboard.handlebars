@@ -9,43 +9,52 @@
   {{/each}}
 </section>
 
-{{! Only show if the person wants to add a comment }}
-<section class="card">
-  <section class="card-content">
-    <form id="new-post">
-      <label for="post_title">Title</label>
-      <input type="text" id="post_title" /><br />
-      <label for="post_content">Body</label>
-      <input
-        type="text"
-        id="post_content"
-        placeholder="write the content of your post here"
-      />
-      <section class="add-new-post">
-        <button class="comment-btn" id="add-post-btn" type="submit">Add a new
-          post</button>
-      </section>
-    </form>
+{{#unless add_post}}
+  <section class="add-new-post">
+    <button class="comment-btn" id="add-post">Add a new post</button></section>
+  <script src="/js/addNewPostButton.js"></script>
+{{/unless}}
+
+{{! Only show if the person wants to add a post }}
+{{#if add_post}}
+  <section class="card">
+    <section class="card-content">
+      <form id="new-post">
+        <label for="post_title">Title</label>
+        <input type="text" id="post_title" /><br />
+        <label for="post_content">Body</label>
+        <input
+          type="text"
+          id="post_content"
+          placeholder="write the content of your post here"
+        />
+        <section class="add-new-post">
+          <button class="comment-btn" id="add-post-btn" type="submit">Add a new
+            post</button>
+        </section>
+      </form>
+    </section>
   </section>
-</section>
+  <script src="/js/addNewPost.js"></script>
+{{/if}}
 
 {{! Only show if the person clicks on the post }}
-<section class="card dashboard-post">
-  <section class="card-content">
-    <form id="update-post">
-      <label for="post_title">Title</label>
-      <input type="text" id="post_title" /><br />
-      <label for="post_content">Body</label>
-      <input type="text" id="post_content" />
-      <section class="add-new-post">
-        <button class="comment-btn" id="update-post-btn" type="submit">Update
-          Post</button>
-        <button class="comment-btn" id="delete-post-btn" type="click">Delete
-          Post</button>
-      </section>
+{{#if update_post}}
+  <section class="card dashboard-post">
+    <section class="card-content">
+      <form id="update-post">
+        <label for="post_title">Title</label>
+        <input type="text" id="post_title" /><br />
+        <label for="post_content">Body</label>
+        <input type="text" id="post_content" />
+        <section class="add-new-post">
+          <button class="comment-btn" id="update-post-btn" type="submit">Update
+            Post</button>
+          <button class="comment-btn" id="delete-post-btn" type="click">Delete
+            Post</button>
+        </section>
 
-    </form>
+      </form>
+    </section>
   </section>
-</section>
-
-<script src="/js/addNewPost.js"></script>
+{{/if}}

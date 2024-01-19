@@ -15,7 +15,7 @@ const addPost = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
     console.log("Post_created!");
-    document.location.reload();
+    document.location.replace("/dashboard");
   }
 };
 
