@@ -2,7 +2,7 @@
   <section class="card" id="post-{{post.id}}">
     <section class="card-header" id="post-{{post.id}}">
       <h3>{{post.post_title}}</h3>
-      <p>posted by {{post.user.username}}</p>
+      <p>posted by {{post.user.username}} on {{format_date post.createdAt}}</p>
     </section>
     <section class="card-content">
       <p>
@@ -20,7 +20,7 @@
         <p>
           {{comment.comment}}
         </p>
-        <p>{{comment.user.username}} on 5/23/20</p>
+        <p>{{comment.user.username}} on {{format_date comment.createdAt}}</p>
 
       </section>
     {{/each}}
