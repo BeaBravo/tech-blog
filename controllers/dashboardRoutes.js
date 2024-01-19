@@ -42,7 +42,13 @@ router.get("/edit/?", async (req, res) => {
     return post.get({ plain: true });
   });
   logged_in = req.session.logged_in;
-  res.render("dashboard", { posts, update_post, logged_in });
+
+  //get post the user wants to update
+  const updatePost = await Post.findByPk(req.query.post_id);
+  const postToUpdate = updatePost.get({ plain: true });
+  console.log(postToUpdate);
+  // res.status(200).json(postToUpdate);
+  res.render("dashboard", { posts, update_post, logged_in, postToUpdate });
 });
 
 module.exports = router;
