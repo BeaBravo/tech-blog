@@ -8,7 +8,7 @@ Tech blog was created for developers who love to write about tech. Users can pub
 
 This app was created using HTML5, CSS, front-end JavaScript, node.js with backend JavaScript, MySQL databate, and sequelize.
 
-Link to deployed app: https://tech-blog-bb-d749bf016efb.herokuapp.com/
+Link to heroku deployed app: https://tech-blog-bb-d749bf016efb.herokuapp.com/
 
 ## Table of Contents
 
